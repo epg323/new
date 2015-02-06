@@ -1,0 +1,52 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>My Page</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.2/jquery.mobile-1.1.2.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.2/jquery.mobile-1.1.2.min.js"></script>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="jquery.phoenix.js" type="text/javascript"></script>
+</head> 
+<body> 
+
+
+<div data-role="page">
+	
+	<div href="#d41117" data-role="header" data-theme="b" >
+		<h1>Vitals</h1>
+	</div><!-- /header -->
+
+
+	<form id="login-form">
+	<label for="first-input">Data</label>
+	<input class="demo" id="first-input" name="input1" type="text" value="Name" />
+	</form>
+	<script type="text/javascript">
+	$('.demo').phoenix({
+namespace: "phoenixStorage",
+maxItems: 100, //  max items to store 
+saveInterval: 1000, // how often to save field values to localStorage
+clearOnSubmit: false, // form selector (when you submit this form Phoenix will clean up stored items)
+saveOnChange: false,
+keyAttributes: ["tagName", "id", "name"] // define which element attributes will be used to find the correct element to populate
+})
+	</script>
+
+<ul data-role="listview" data-inset="true" data-filter="true">
+	<li><a href="#">Acura</a></li>
+	<li><a href="#">Audi</a></li>
+	<li><a href="#">BMW</a></li>
+	<li><a href="#">Cadillac</a></li>
+	<li><a href="#">Ferrari</a></li>
+</ul>
+<a href="#" data-role="button" data-icon="star" data-theme="b">Button</a>
+</div><!-- /page -->
+
+	
+	<div data-role="content">	
+	</div><!-- /content -->
+</body>
+</html>
